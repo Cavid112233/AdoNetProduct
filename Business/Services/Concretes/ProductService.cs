@@ -2,11 +2,6 @@
 using Core.Models;
 using Core.RepositoryAbstract;
 using Data.RepositoryConcretes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Services.Concretes
 {
@@ -37,7 +32,9 @@ namespace Business.Services.Concretes
             return _productRepository.Get(command);
         }
 
-        public void UpdateStudent(int id, Product newProduct)
+        
+
+        public void UpdateProduct(int id, Product newProduct)
         {
             string command = $"SELECT * FROM Products WHERE Id = {id}";
             Product product = _productRepository.Get(command);
@@ -47,7 +44,7 @@ namespace Business.Services.Concretes
             product.Name = newProduct.Name;
             product.Price = newProduct.Price;
 
-            string updateCommand = $"UPDATE Students SET Name = '{product.Name}', Price = {product.Price} WHERE Id = {id}";
+            string updateCommand = $"UPDATE Products SET Name = '{product.Name}', Price = {product.Price} WHERE Id = {id}";
             _productRepository.Update(updateCommand);
         }
     }
