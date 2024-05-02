@@ -11,7 +11,7 @@ namespace Business.Services.Abstracts
     {
         void DeleteProduct(int id);
         void AddProduct(Product product);
-        void UpdateProduct(int id, Product newStudent);
+        void UpdateProduct(int id, Product newProduct);
 
         Product GetProduct(int id);
         List<Product> GetAllProducts();
